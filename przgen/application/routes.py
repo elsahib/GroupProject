@@ -18,3 +18,4 @@ def prize():
         prize = 50
     return jsonify({"code":s+n,"prize":prize})
     #return Response('your code ' + s + str(n) +  ' Won you ' + str(prize) + '£', mimetype='text/plain')
+
