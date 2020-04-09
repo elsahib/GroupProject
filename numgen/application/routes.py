@@ -1,3 +1,14 @@
 from application import app
 
-#this is where the code needs to go
+#app3 code which generates a random number
+
+from application import app
+from flask import request, Response
+import string, random
+
+
+@app.route('/num', methods =['GET'] )
+def num():
+    result = ''.join(random.choices(string.digits, k = 6))
+
+    return Response(result, mimetype='text/plain')
