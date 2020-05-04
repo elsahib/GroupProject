@@ -9,4 +9,3 @@ def text():
     
 
     return Response(result, mimetype='text/plain')
-    

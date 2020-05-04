@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block body_content %}
+<div class="row"></div>
+<div class="row">
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+</div>
+<div class="row"></div>
+    <div class="text-center">
+        <br/>
+<br>
+<br>
+        <h3 class="alert alert-secondary w-50 mx-auto">{{ current_user.first_name }}'s Account Details</h3>
+        <br>
+        
+        <form class="form-signin" method='POST' action=''>
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                <!-- {{ form.first_name.label(class_="") }} -->
+                {{ form.first_name(class_="form-control", placeholder="First Name") }}
+                {% if form.first_name.errors %}
+                <div class="error">
+                    {% for error in form.first_name.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                <!-- {{ form.last_name.label }} -->
+                
+                {{ form.last_name(class_="form-control", placeholder="Last Name") }}
+            
+                {% if form.last_name.errors %}
+                <div class="error">
+                    {% for error in form.last_name.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <div class="form_group">
+                <!-- {{ form.email.label }} -->
+                
+                {{ form.email(class_="form-control", placeholder="Email") }}
+                
+                {% if form.email.errors %}
+                    <div class='error'>
+                        {% for error in form.email.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <br>
+            <div class='form_group'>
+                {{ form.submit(class_="btn btn-lg btn-primary btn-block") }}
+                </div>
+        </form>
+        <form class="form-signin alert alert-warning" action="{{ url_for('account_delete') }}">
+            
+            <button class="btn-outline-danger" type="submit">Delete your account</button>
+            <br>
+            <br>
+                <p class="">Note: All your Data will be Removed</p>
+
+        </form>
+    </div>
+  
+        
+{% endblock body_content %}

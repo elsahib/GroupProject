@@ -1,27 +1,26 @@
 version: "3.7"
 services: 
     txtgen:
-        build: ./txtgen
+        image: elsahib/txtgen
         ports: 
             - "8000:8000"
     numgen:
-        build: ./numgen
+        image: elsahib/numgen
         ports: 
             - "8001:8000"
     przgen:
-        build: ./przgen
+        image: elsahib/przgen
         depends_on: 
-            - numgen
             - txtgen
+            - numgen
         ports: 
             - "8002:8000"
     prize:
-        build: ./prize
+        image: elsahib/prize
         depends_on: 
-            - numgen
             - txtgen
+            - numgen
             - przgen
-            - database
         ports: 
             - "80:8000"
         environment:
@@ -31,15 +30,3 @@ services:
             MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
             DBserv: ${DBserv}
         command: bash -c './chkDB.sh && gunicorn --workers=4 --bind=0.0.0.0:8000 app:app'
-    database:
-        image: mysql:5.7
-        volumes:
-            - "mydb:/var/lib/mysql"
-        container_name: mysql
-        ports:
-        - "3306:3306"
-        environment:
-            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-            MYSQL_DATABASE: prizes
-volumes:
-    mydb:

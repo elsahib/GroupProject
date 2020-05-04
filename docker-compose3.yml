@@ -21,7 +21,6 @@ services:
             - numgen
             - txtgen
             - przgen
-            - database
         ports: 
             - "80:8000"
         environment:
@@ -31,15 +30,3 @@ services:
             MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
             DBserv: ${DBserv}
         command: bash -c './chkDB.sh && gunicorn --workers=4 --bind=0.0.0.0:8000 app:app'
-    database:
-        image: mysql:5.7
-        volumes:
-            - "mydb:/var/lib/mysql"
-        container_name: mysql
-        ports:
-        - "3306:3306"
-        environment:
-            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-            MYSQL_DATABASE: prizes
-volumes:
-    mydb:
