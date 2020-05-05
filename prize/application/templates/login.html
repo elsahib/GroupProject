@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block body_content %}
+    <div class="text-center">
+        <h1>Login Page</h1>
+        <p>Need an account? <a href="{{ url_for('register') }}">Sign up</a></p>
+        
+            <form class="form-signin" method='POST' action=''>
+                {{ form.hidden_tag() }}
+                
+                    <label for="Email" class="sr-only">{{ form.email.label }}</label>
+                    
+                    {{ form.email(class_="form-control", placeholder="Email address") }}
+                    {% if form.email.errors %}
+                        <div class='error'>
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                
+                
+                
+                    <label for="Password" class="sr-only">{{ form.password.label }}</label>
+                    {{ form.password(class_="form-control", placeholder="Your Password") }}
+                    {% if form.password.errors %}
+                    <div class='error'>
+                        {% for error in form.password.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                
+                <!--Password and Check Password fields-->
+                
+                <div class="checkbox mb-3">
+                
+                {{ form.remember.label }}
+                {{ form.remember }}
+                </div>
+                <br>
+                
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" >Login</button>
+                
+            </form>
+        
+    </div>
+{% endblock body_content %}

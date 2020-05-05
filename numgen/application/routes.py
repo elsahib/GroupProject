@@ -1,8 +1,4 @@
 from application import app
-
-#app3 code which generates a random number
-
-from application import app
 from flask import request, Response
 import string, random
 

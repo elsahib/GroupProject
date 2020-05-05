@@ -1,9 +1,36 @@
-<html>
-<head>
-<title>
+{% extends 'layout.html' %}
+{% block body_content%}
+<style>
+    .btn {
+  font-size:25px
+}
+</style>
+<div class="row"></div>
+<div class="row">
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+</div>
+<div class="row"></div>
 
-</title>
-</head>
-<body>
-</body>
-</html>
+<div class="text-center jumbotron ">
+<div><a href="{{ url_for('gen') }}"><button type="button" class="btn btn-large w-25 py-5 btn-outline-primary font-weight-bolder">Generate a Code</button></a></div>
+<br/>
+<br>
+<br>
+
+<div class="alert alert-primary mx-5">
+{% if code and prize %}
+<p >Your generated code is </p>
+<br>
+<strong><h3 class="alert alert-success w-25 mx-auto font-weight-bolder">{{ code }}</h3></strong>
+<br>
+<p>and you won </p>
+<br>
+<strong><h3 class="alert alert-success w-25 mx-auto font-weight-bolder">£ {{ prize }}</h3></strong>
+</div>
+{% else %}
+<p class="text-secondary mt-3"> Login then press the button above to get a code</p>
+{% endif %}
+</div>
+{% endblock body_content %}
