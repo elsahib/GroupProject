@@ -57,17 +57,17 @@ To provide a solution for our client we aim to utilise the supporting tools, tec
 <a name="user_stories"></a>
 ## User Stories
 
-<img src="documentation/user_stories1.jpg" alt="User Stories" width="90%" height="90%"/>
+<img src="documentation/user_stories1.png" alt="User Stories" width="90%" height="90%"/>
 
 
 <a name="risks"></a>
 ## Risk Assessment
 
-<img src="documentation/Risk_Assessment_1.jpg" alt="Risk Assessment" width="90%" height="90%"/>
+<img src="documentation/Risk_Assessment_1.png" alt="Risk Assessment" width="90%" height="90%"/>
 
-<img src="documentation/Risk_Assessment_2.jpg" alt="Risk Assessment" width="90%" height="90%"/>
+<img src="documentation/Risk_Assessment_2.png" alt="Risk Assessment" width="90%" height="90%"/>
 
-<img src="documentation/Risk_Assessment3.jpg" alt="Risk Assessment" width="90%" height="90%"/>
+<img src="documentation/Risk_Assessment3.png" alt="Risk Assessment" width="90%" height="90%"/>
  
 
 <a name="kan"></a>
