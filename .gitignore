@@ -5,3 +5,4 @@
 /prize/application/__pycache__/*
 /przgen/application/__pycache__/*
 /history_for_print.txt
+*/.pytest_cache/*

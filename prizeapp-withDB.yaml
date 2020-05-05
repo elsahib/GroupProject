@@ -1,0 +1,185 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: numgen
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: numgen
+  template:
+    metadata:
+      labels:
+        app: numgen
+    spec:
+      containers:
+      - image: elsahib/numgen
+        name: numgen
+        ports:
+        - containerPort: 8000
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: numgen
+spec:
+  ports:
+  - name: "8001"
+    port: 8000
+    targetPort: 8000
+  selector:
+    app: numgen
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: txtgen
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: txtgen
+  template:
+    metadata:
+      labels:
+        app: txtgen
+    spec:
+      containers:
+      - image: elsahib/txtgen
+        name: txtgen
+        ports:
+        - containerPort: 8000
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: txtgen
+spec:
+  ports:
+  - name: "8000"
+    port: 8000
+    targetPort: 8000
+  selector:
+    app: txtgen
+---  
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - env:
+        - name: MYSQL_DATABASE
+          value: prizes
+        - name: MYSQL_ROOT_PASSWORD
+          value: {{MYSQL_ROOT_PASSWORD}}
+        image: mysql:5.7
+        name: mysql
+        ports:
+        - containerPort: 3306
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+spec:
+  ports:
+  - name: "3306"
+    port: 3306
+    targetPort: 3306
+  selector:
+    app: mysql
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: przgen
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: przgen
+  template:
+    metadata:
+      labels:
+        app: przgen
+    spec:
+      containers:
+      - image: elsahib/przgen
+        name: przgen
+        ports:
+        - containerPort: 8000
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: przgen
+spec:
+  ports:
+  - name: "8002"
+    port: 8000
+    targetPort: 8000
+  selector:
+    app: przgen
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prize
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prize
+  template:
+    metadata:
+      labels:
+        app: prize
+    spec:
+      containers:
+      - args:
+        - bash
+        - -c
+        - ./chkDB.sh && gunicorn --workers=4 --bind=0.0.0.0:8000 app:app
+        env:
+          - name: DATABASE_URI
+            value: {{DATABASE_URI}}
+          - name: DBUser
+            value: {{DBUser}}
+          - name: DBserv
+            value: {{DBserv}}
+          - name: MYSQL_ROOT_PASSWORD
+            value: {{MYSQL_ROOT_PASSWORD}}
+          - name: SECRET_KEY
+            value: {{SECRET_KEY}}
+        image: elsahib/prize
+        name: prize
+        ports:
+        - containerPort: 8000
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prize
+spec:
+  ports:
+  - name: "80"
+    port: 80
+    targetPort: 8000
+  selector:
+    app: prize
+  type: LoadBalancer
