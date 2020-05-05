@@ -57,7 +57,7 @@ To provide a solution for our client we aim to utilise the supporting tools, tec
 <a name="user_stories"></a>
 ## User Stories
 
-<img src="documentation/user_stories.jpg" alt="User Stories" width="90%" height="90%"/>
+<img src="documentation/user_stories1.jpg" alt="User Stories" width="90%" height="90%"/>
 
 
 <a name="risks"></a>
