@@ -17,19 +17,23 @@ A group project to fulfill the DevOps GMCA Project Specifications
  
 <a name="brief"></a>
 ## Brief
-Our client has a requested our group to make a prize generator application. 
+Our client has a requested that our group create a prize generator application. 
 At the click of a button, the user will be presented on screen with a randomly generated code. 
 The code must contain three randomly generated letters and six randomly created digits, for example hsy653471.
 
-The generated code will be automatically tested to ensure that it meets the following conditionals:
+The generated code will be automatically tested to ensure that it meets the following conditions:
 
-•	If the first letter is an ‘a’ there is a 25% chance of winning £100 and 75% to win £50
+•	If the first letter is an ‘a’ there is a 25% chance of winning £100, and 75% to win £50 otherwise.
 
 The generated codes and their output (prize status) must be stored in a database. 
 
-For services number 2, number 3 and number 4 we need to create two different implementations. We must be able to demonstrate swapping these implementations out for each other seamlessly, without disrupting the user experience. 
+For services number 2, number 3 and number 4 we need to create two different implementations. 
 
-The application must run as four separate services that are inter-connected. This will allow the client to make any updates without the application being effected.  
+We must be able to demonstrate swapping these implementations out for each other seamlessly, without disrupting the user experience. 
+
+The application must run as four separate, yet inter-connected services.
+
+This allows the client to make any updates without the application being effected.  
 
 
 <a name= 'solution'></a>
@@ -38,17 +42,18 @@ The application must run as four separate services that are inter-connected. Thi
 To provide a solution for our client we aim to utilise the supporting tools, technologies and methodologies covered during training in the academy. We will approach each area of the project with a DevOps mindset aiming to produce a high-quality application with clear communication and cooperation between the members of the group. For this we have decided the following:
  
 * Adopt Agile methods to manage our project
-* Perform risk assessment using the outline covered during the training
-* Implement Kanban method using Trello
+* Perform risk assessments using the outline covered during the training
+* Implement Kanban method using Trello (later Projects on Azure DevOps).
 * Build database ERD using Draw.io
-* Create Git repository to be our VCS
+* Create Git repository to be our VCS (subsequently migrated to Azure DevOps repo).
 * Use MySQL server, HTML5, CSS3 , Python, Flask and a few more python modules  to build and test the application (refer to the requirements.txt for more details )
-* Host the Application ( MySQL Database Server, Linux Web Application Server and Linux server hosting the automated deployment server for continuous integration ‘Jenkins’ ) on Google Cloud Platform ( free tier )
+* Host the Application (MySQL Database Server, Linux Web Application Server and Linux server hosting the automated deployment server for continuous integration ‘Jenkins’ ) on Google Cloud Platform ( free tier )
 * Build containers for the separate micro-services that are part of the project
 * Integrate automation where possible in line with the DevOps mindset 
 * Test the application
 * Deploy the application using an orchestration tool
- 
+* Migrate the application to Azure DevOps CI Pipeline and orchestration tool for seamless rolling updates
+
 <a name="user_stories"></a>
 ## User Stories
 
@@ -67,8 +72,9 @@ To provide a solution for our client we aim to utilise the supporting tools, tec
 
 <a name="kan"></a>
 ## Kanban Board
-To create a back-log for the application and to also keep track of our progress while developing the application, we used Trello Board. It contained all the user stories and our To Do list. It gets updated regularly.
-This was extremely useful for planning and managing our work as a team as we were completing the project by working remotely.
+A regularly updated Trello board - see https://trello.com/b/EiUrPxd9/group-1-devops -  kept track of sprints, user stories, progress resolving issues and to-do list/task backlog. 
+
+This was extremely useful for planning and managing our work as a geographically separated team as we were completing the project by working remotely.
 
 <img src="documentation/TrelloBoard.png" alt="Trello Board" width="90%" height="90%"/>
  
@@ -78,3 +84,4 @@ This was extremely useful for planning and managing our work as a team as we wer
 #### Initial ERD plan
  
 <img src="documentation/Grp1-proj-init-ERD.png" alt="Prize Generator ERD" width="60%" height="80%"/>
+
