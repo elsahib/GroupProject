@@ -85,3 +85,18 @@ This was extremely useful for planning and managing our work as a geographically
  
 <img src="documentation/Grp1-proj-init-ERD.png" alt="Prize Generator ERD" width="60%" height="80%"/>
 
+<a name="UWI"></a>
+## User Web Interface
+ 
+### Home Page without Login
+<img src="Documentation/app1.png" alt="Coverage Report" width="100%" height="100%"/>
+ 
+### Home Page for a Logged in user
+<img src="Documentation/app2.png" alt="Coverage Report" width="100%" height="100%"/>
+ 
+### Stats View Page
+<img src="Documentation/app3.png" alt="Coverage Report" width="100%" height="100%"/>
+ 
+### Players View Page
+<img src="Documentation/app4.png" alt="Coverage Report" width="100%" height="100%"/>
+
