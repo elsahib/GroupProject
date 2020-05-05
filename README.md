@@ -67,7 +67,7 @@ To provide a solution for our client we aim to utilise the supporting tools, tec
 
 <img src="documentation/Risk_Assessment_2.jpg" alt="Risk Assessment" width="90%" height="90%"/>
 
-<img src="documentation/Risk_Assessment_3.jpg" alt="Risk Assessment" width="90%" height="90%"/>
+<img src="documentation/Risk_Assessment3.jpg" alt="Risk Assessment" width="90%" height="90%"/>
  
 
 <a name="kan"></a>
