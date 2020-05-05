@@ -89,19 +89,19 @@ This was extremely useful for planning and managing our work as a geographically
 ## User Web Interface
  
 ### Home Page without Login
-<img src="documentation/home_page.png" alt="Coverage Report" width="100%" height="100%"/>
+<img src="documentation/home_page.png" alt="Home Page" width="100%" height="100%"/>
  
 ### Registration Page
-<img src="documentation/reg_page.png" alt="Coverage Report" width="100%" height="100%"/>
+<img src="documentation/reg_page.png" alt="Registration Page" width="100%" height="100%"/>
  
 ### Login Page
-<img src="documentation/login_page.png" alt="Coverage Report" width="100%" height="100%"/>
+<img src="documentation/login_page.png" alt="Login Page" width="100%" height="100%"/>
  
 ### Generate Code Page
-<img src="documentation/gen_code.png" alt="Coverage Report" width="100%" height="100%"/>
+<img src="documentation/gen_code.png" alt="Generate Code Page" width="100%" height="100%"/>
 
-### Generate Code Page
-<img src="documentation/stored_codes.png" alt="Coverage Report" width="100%" height="100%"/>
+### Stored Codes Page
+<img src="documentation/stored_codes.png" alt="Stored Codes" width="100%" height="100%"/>
 
 ### Manage Account Page
-<img src="documentation/manage_acc.png" alt="Coverage Report" width="100%" height="100%"/>
+<img src="documentation/manage_acc.png" alt="Manage Account Page" width="100%" height="100%"/>
