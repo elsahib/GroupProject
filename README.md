@@ -17,7 +17,10 @@ A group project to fulfill the DevOps GMCA Project Specifications
  
 <a name="brief"></a>
 ## Brief
-Our client has a requested our group to make a prize generator application. At the click of a button, the user will be presented on screen with a randomly generated code. The code must contain three randomly generated letters and six randomly created digits, for example hsy653471.
+Our client has a requested our group to make a prize generator application. 
+At the click of a button, the user will be presented on screen with a randomly generated code. 
+The code must contain three randomly generated letters and six randomly created digits, for example hsy653471.
+
 The generated code will be automatically tested to ensure that it meets the following conditionals:
 
 •	If the first letter is an ‘a’ there is a 25% chance of winning £100 and 75% to win £50
