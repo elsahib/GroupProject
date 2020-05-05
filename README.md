@@ -89,14 +89,19 @@ This was extremely useful for planning and managing our work as a geographically
 ## User Web Interface
  
 ### Home Page without Login
-<img src="Documentation/app1.png" alt="Coverage Report" width="100%" height="100%"/>
+<img src="documentation/home_page.png" alt="Coverage Report" width="100%" height="100%"/>
  
-### Home Page for a Logged in user
-<img src="Documentation/app2.png" alt="Coverage Report" width="100%" height="100%"/>
+### Registration Page
+<img src="documentation/reg_page.png" alt="Coverage Report" width="100%" height="100%"/>
  
-### Stats View Page
-<img src="Documentation/app3.png" alt="Coverage Report" width="100%" height="100%"/>
+### Login Page
+<img src="documentation/login_page.png" alt="Coverage Report" width="100%" height="100%"/>
  
-### Players View Page
-<img src="Documentation/app4.png" alt="Coverage Report" width="100%" height="100%"/>
+### Generate Code Page
+<img src="documentation/gen_code.png" alt="Coverage Report" width="100%" height="100%"/>
 
+### Generate Code Page
+<img src="documentation/stored_codes.png" alt="Coverage Report" width="100%" height="100%"/>
+
+### Manage Account Page
+<img src="documentation/manage_acc.png" alt="Coverage Report" width="100%" height="100%"/>
