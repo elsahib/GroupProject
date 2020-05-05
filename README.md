@@ -27,11 +27,11 @@ The generated code will be automatically tested to ensure that it meets the foll
 
 The generated codes and their output (prize status) must be stored in a database. 
 
+The application must run as four separate, yet inter-connected services.
+
 For services number 2, number 3 and number 4 we need to create two different implementations. 
 
 We must be able to demonstrate swapping these implementations out for each other seamlessly, without disrupting the user experience. 
-
-The application must run as four separate, yet inter-connected services.
 
 This allows the client to make any updates without the application being effected.  
 
