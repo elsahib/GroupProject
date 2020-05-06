@@ -24,7 +24,7 @@ def home():
 @app.route('/gen')
 @login_required
 def gen():
-    response = requests.get('https://prize.azurewebsites.net/home')
+    response = requests.get('http://przgen:8000/home')
     code = str(response.json()["code"])
     prize = str(response.json()["prize"])
     prizeData = Prizes(code =code, prize = prize, id = current_user.id)

@@ -5,9 +5,9 @@ from flask import request, Response, jsonify
 @app.route('/home', methods =['GET','Post'] )
 def prize():
 
-    reqnum= requests.get('https://numgene.azurewebsites.net/num')# request to num gen
+    reqnum= requests.get('http://numgen:8000/num')# request to num gen
     n = str(reqnum.text)
-    reqtext= requests.get('https://textgen.azurewebsites.net/text') # request to sring gen
+    reqtext= requests.get('http://txtgen:8000/text') # request to sring gen
     s = str(reqtext.text)
     stakes = random.randint(1,100)
     prize = 0
