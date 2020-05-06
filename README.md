@@ -90,7 +90,7 @@ This was extremely useful for planning and managing our work as a geographically
 
 <img src="documentation/numgen-coverage.PNG" alt="Number Generator Coverage" width="100%" height="100%"/>
 
-<img src="documentation/textgen-coveerage.PNG" alt="Text Generator Coverage" width="100%" height="100%"/>
+<img src="documentation/txtgen-coveerage.PNG" alt="Text Generator Coverage" width="100%" height="100%"/>
 
 <img src="documentation/przgen-coverage.PNG" alt="Prize Generator Coverage" width="100%" height="100%"/>
 
