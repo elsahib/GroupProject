@@ -104,6 +104,8 @@ The Testing for the application was done using pytest module. It tests the diffe
 <img src="documentation/przgen-coverage.PNG" alt="Prize Generator Coverage" width="100%" height="100%"/>
 
 ### Front-end Prize Generator Page
+
+Coverage for this is not 100% as it does not include login protected parts of the application.
 <img src="documentation/prize_frontend-coverage.PNG" alt="Prize Frontend Coverage" width="100%" height="100%"/>
 
 <a name="UWI"></a>
