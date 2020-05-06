@@ -1,14 +1,20 @@
 from application import app
 import random, requests
 from flask import request, Response, jsonify
+from requests.exceptions import ConnectionError
 
 @app.route('/home', methods =['GET','Post'] )
 def prize():
+    try:
+            
+        reqnum= requests.get('http://numgen:8000/num') # request to num gen
+        n = str(reqnum.text)
+        reqtext= requests.get('http://txtgen:8000/text')  # request to sring gen
+        s = str(reqtext.text)
+    except ConnectionError:
+        s = 'zzz'
+        n = '000000'
 
-    reqnum= requests.get('http://numgen:8000/num')# request to num gen
-    n = str(reqnum.text)
-    reqtext= requests.get('http://txtgen:8000/text') # request to sring gen
-    s = str(reqtext.text)
     stakes = random.randint(1,100)
     prize = 0
     if s[0] == 'a':
@@ -18,6 +24,8 @@ def prize():
             prize = 50
         else:
             prize = random.randint(1,50)
+    elif s+n == 'zzz000000':
+        prize = 0
     else:
         prize = random.randint(1,50)
     return jsonify({"code":s+n,"prize":prize})
