@@ -34,3 +34,12 @@ steps:
     pytest --cov-report=html
   displayName: 'testing text generator'
 
+- script: |
+    cd przgen
+    pytest --cov-report=html
+  displayName: 'testing prize generator'
+
+- script: |
+    cd prize
+    pytest --cov-report=html
+  displayName: 'testing front end'
