@@ -88,13 +88,13 @@ This was extremely useful for planning and managing our work as a geographically
 <a name="testing"></a>
 ## Testing
 
-<img src="documentation/numgen-coverage.PNG" alt="Number Generator Coverage" width="60%" height="80%"/>
+<img src="documentation/numgen-coverage.PNG" alt="Number Generator Coverage" width="100%" height="100%"/>
 
-<img src="documentation/testgen-coveerage.PNG" alt="Text Generator Coverage" width="60%" height="80%"/>
+<img src="documentation/textgen-coveerage.PNG" alt="Text Generator Coverage" width="100%" height="100%"/>
 
-<img src="documentation/prizegen-coverage.PNG" alt="Prize Generator Coverage" width="60%" height="80%"/>
+<img src="documentation/przgen-coverage.PNG" alt="Prize Generator Coverage" width="100%" height="100%"/>
 
-<img src="documentation/prize_frontend-coverage.PNG" alt="Prize Frontend Coverage" width="60%" height="80%"/>
+<img src="documentation/prize_frontend-coverage.PNG" alt="Prize Frontend Coverage" width="100%" height="100%"/>
 
 <a name="UWI"></a>
 ## User Web Interface
