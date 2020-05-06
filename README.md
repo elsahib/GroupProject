@@ -76,8 +76,9 @@ A regularly updated Trello board - see https://trello.com/b/EiUrPxd9/group-1-dev
 
 This was extremely useful for planning and managing our work as a geographically separated team as we were completing the project by working remotely.
 
-<img src="documentation/TrelloBoard.png" alt="Trello Board" width="90%" height="90%"/>
- 
+<img src="documentation/trello1.png" alt="Trello Board" width="90%" height="90%"/>
+
+<img src="documentation/trello2.png" alt="Trello Board" width="90%" height="90%"/>
  
 <a name="erd"></a>
 ## Entity Relationship Diagrams
