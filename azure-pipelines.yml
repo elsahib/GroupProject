@@ -5,6 +5,9 @@
 
 trigger:
 - przgen
+variables:
+  SECRET_KEY: $(SECRET_KEY)
+  DATABASE_URI: $(DATABASE_URI)
 
 pool:
   vmImage: 'ubuntu-latest'
