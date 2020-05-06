@@ -44,7 +44,7 @@ steps:
 
 - script: |
     cd prize
-    export $(DATABASE_URI)
-    export $(SECRET_KEY)
+    declare $(DATABASE_URI)
+    declare $(SECRET_KEY)
     pytest --cov-report=html
   displayName: 'testing front end'
