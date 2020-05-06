@@ -87,13 +87,21 @@ This was extremely useful for planning and managing our work as a geographically
 
 <a name="testing"></a>
 ## Testing
+The Testing for the application was done using pytest module. It tests the different microservices used including:
+- the random number generator
+- random text generator
+- 
 
+### Number Generator
 <img src="documentation/numgen-coverage.PNG" alt="Number Generator Coverage" width="100%" height="100%"/>
 
+### Text Generator
 <img src="documentation/txtgen-coveerage.PNG" alt="Text Generator Coverage" width="100%" height="100%"/>
 
+### Prize Generator
 <img src="documentation/przgen-coverage.PNG" alt="Prize Generator Coverage" width="100%" height="100%"/>
 
+###  Generator
 <img src="documentation/prize_frontend-coverage.PNG" alt="Prize Frontend Coverage" width="100%" height="100%"/>
 
 <a name="UWI"></a>
