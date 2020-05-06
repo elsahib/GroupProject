@@ -30,7 +30,7 @@ steps:
   displayName: 'testing number generator'
 
 - script: |
-    cd ./../txtgen
+    cd txtgen
     pytest --cov-report=html
   displayName: 'testing text generator'
 
