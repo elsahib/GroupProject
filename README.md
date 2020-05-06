@@ -112,9 +112,13 @@ Coverage for this is not 100% as it does not include login protected parts of th
 <a name="deployment"></a>
 ## Deployment
 
-Application deployment is automated using a webhook from github to the CI server, Azure Devops Project. Whenever a commit is made to the master branch, the CI server is notified and it will grab a copy of the changes. The will trigger Docker to build the images and they will be deployed using Kubernetes as an orchectration tool. 
+To advance our skills and maximise the potential of available technologies we have deployed our application in two ways.
 
-The diagram below displays the complexity of the CI/CD pipleine.
+Firstly, we have used a Kubernetes Kluster. The application deployment is automated using a webhook from github to the CI server, Azure Devops Project. Whenever a commit is made to the master branch, the CI server is notified and it will grab a copy of the changes. The will trigger Docker to build the images and they will be deployed using Kubernetes as an orchestration tool. 
+
+We have also deployed our application using Azure Functions.
+
+The diagram below displays the complexity of the CI/CD pipeline.
 
 <img src="documentation/CI_pipeline.png" alt="CI/CD Pipeline" width="100%" height="100%"/>
 
