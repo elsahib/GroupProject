@@ -142,3 +142,11 @@ The diagram below displays the complexity of the CI/CD pipeline.
 
 ### Manage Account Page
 <img src="documentation/manage_acc.png" alt="Manage Account Page" width="100%" height="100%"/>
+
+<a name="rel"></a>
+## Relevant information and links
+
+* Application link IP address: http://20.185.78.213
+* Azure Functions Deployment: https://theprizeapp.azurewebsites.net/
+
+* Trello Board Link: https://trello.com/b/EiUrPxd9/group-1-devops
