@@ -116,6 +116,8 @@ To advance our skills and maximise the potential of available technologies we ha
 
 Firstly, we have used a Kubernetes Kluster. The application deployment is automated using a webhook from github to the CI server, Azure Devops Project. Whenever a commit is made to the master branch, the CI server is notified and it will grab a copy of the changes. The will trigger Docker to build the images and they will be deployed using Kubernetes as an orchestration tool. 
 
+We have also deployed our application using Azure Functions.
+
 
 The diagram below displays the complexity of the CI/CD pipeline.
 
@@ -146,5 +148,7 @@ The diagram below displays the complexity of the CI/CD pipeline.
 ## Relevant information and links
 
 * Application link IP address: http://20.185.78.213
+
+* Azure Functions Deployment: https://theprizeapp.azurewebsites.net/
 
 * Trello Board Link: https://trello.com/b/EiUrPxd9/group-1-devops
