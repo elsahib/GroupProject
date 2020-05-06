@@ -1,4 +1,4 @@
-# GroupProject
+# GroupProject [![Build Status](https://dev.azure.com/PrizeGenerator/PrizeGenApp/_apis/build/status/PrizeGenApp-Docker%20container-CI?branchName=przgen)](https://dev.azure.com/PrizeGenerator/PrizeGenApp/_build/latest?definitionId=3&branchName=przgen)
 # Prize Generator Application
 A group project to fulfill the DevOps GMCA Project Specifications
  
