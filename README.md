@@ -90,7 +90,8 @@ This was extremely useful for planning and managing our work as a geographically
 The Testing for the application was done using pytest module. It tests the different microservices used including:
 - the random number generator
 - random text generator
-- 
+- prize generator
+- front-end prize generator page
 
 ### Number Generator
 <img src="documentation/numgen-coverage.PNG" alt="Number Generator Coverage" width="100%" height="100%"/>
@@ -101,7 +102,7 @@ The Testing for the application was done using pytest module. It tests the diffe
 ### Prize Generator
 <img src="documentation/przgen-coverage.PNG" alt="Prize Generator Coverage" width="100%" height="100%"/>
 
-###  Generator
+### Front-end Prize Generator Page
 <img src="documentation/prize_frontend-coverage.PNG" alt="Prize Frontend Coverage" width="100%" height="100%"/>
 
 <a name="UWI"></a>
