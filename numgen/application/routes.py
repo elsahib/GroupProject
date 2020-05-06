@@ -5,6 +5,6 @@ import string, random
 
 @app.route('/num', methods =['GET'] )
 def num():
-    result = ''.join(random.choices(string.digits, k = 6))
+    result = ''.join(random.choices(string.digits, k = 8))
 
     return Response(result, mimetype='text/plain')

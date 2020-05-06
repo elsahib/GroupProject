@@ -5,7 +5,7 @@ import string, random
 
 @app.route('/text', methods =['GET'] )
 def text():
-    result= ''.join(random.choices(string.ascii_lowercase, k=3))
+    result= ''.join(random.choices(string.ascii_uppercase, k=2))
     
 
     return Response(result, mimetype='text/plain')
