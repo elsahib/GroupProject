@@ -8,43 +8,85 @@ trigger:
 variables:
   SECRET_KEY: $(SECRET_KEY)
   DATABASE_URI: $(DATABASE_URI)
-
 pool:
-  vmImage: 'ubuntu-latest'
-strategy:
-  matrix:
-    Python37:
-      python.version: '3.7'
+  name: Azure Pipelines
+#Your build pipeline references an undefined variable named ‘DATABASE_URI’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
+#Your build pipeline references an undefined variable named ‘SECRET_KEY’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
+#Your build pipeline references an undefined variable named ‘DATABASE_URI’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
+#Your build pipeline references an undefined variable named ‘SECRET_KEY’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
+#Your build pipeline references an undefined variable named ‘MYSQL_ROOT_PASSWORD’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
+#Your build pipeline references an undefined variable named ‘DBUser’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
+#Your build pipeline references an undefined variable named ‘DBserv’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
 
 steps:
-- task: UsePythonVersion@0
+- bash: |
+   # Write your commands here
+   mv routes.py temp
+   sed -e "s,('http://txtgen:8000/text'),('https://textgen.azurewebsites.net/text'),g" -e "s,('http://numgen:8000/num'),('https://numgene.azurewebsites.net/num'),g" temp > routes.py
+   
+  workingDirectory: przgen/application
+  displayName: 'Edit przgen routes.py'
+
+- bash: |
+   # Write your commands here
+   mv routes.py temp
+   sed -e "s,('http://przgen:8000/home'),('https://prize.azurewebsites.net/home'),g" temp > routes.py
+   
+  workingDirectory: prize/application
+  displayName: 'Edit prize routes.py '
+
+- task: Docker@2
+  displayName: 'buildAndPush Text Generator copy'
   inputs:
-    versionSpec: '3.7'
-  displayName: 'Use Python 3.7'
+    containerRegistry: GroupProject
+    repository: elsahib20/txtgen:$(Build.BuildId)
+    Dockerfile: txtgen/Dockerfile
 
-- script: |
-    python -m pip install --upgrade pip
-    pip install -r prize/requirements.txt
-  displayName: 'Install dependencies'
+- task: Docker@2
+  displayName: 'buildAndPush Prize Application copy'
+  inputs:
+    containerRegistry: GroupProject
+    repository: elsahib20/prize:$(Build.BuildId)
+    Dockerfile: prize/Dockerfile
 
-- script: |
-    cd numgen
-    pytest --cov-report=html
-  displayName: 'testing number generator'
+- task: Docker@2
+  displayName: 'buildAndPush Prize Generator copy'
+  inputs:
+    containerRegistry: GroupProject
+    repository: elsahib20/przgen:$(Build.BuildId)
+    Dockerfile: przgen/Dockerfile
 
-- script: |
-    cd txtgen
-    pytest --cov-report=html
-  displayName: 'testing text generator'
+- task: Docker@2
+  displayName: 'buildAndPush Number Generator copy'
+  inputs:
+    containerRegistry: GroupProject
+    repository: elsahib20/numgen:$(Build.BuildId)
+    Dockerfile: numgen/Dockerfile
 
-- script: |
-    cd przgen
-    pytest --cov-report=html
-  displayName: 'testing prize generator'
+- task: AzureFunctionAppContainer@1
+  displayName: 'Azure Function App on Container Deploy: textgen'
+  inputs:
+    azureSubscription: 'Free Trial (7f34fecc-80ca-417b-9aae-80ddc33a2d4b)'
+    appName: textgen
+    imageName: 'elsahib20/txtgen:$(Build.BuildId)'
 
-- script: |
-    cd prize
-    declare $(DATABASE_URI)
-    declare $(SECRET_KEY)
-    pytest --cov-report=html
-  displayName: 'testing front end'
+- task: AzureFunctionAppContainer@1
+  displayName: 'Azure Function App on Container Deploy: numgen'
+  inputs:
+    azureSubscription: 'Free Trial (7f34fecc-80ca-417b-9aae-80ddc33a2d4b)'
+    appName: numgene
+    imageName: 'elsahib20/numgen:$(Build.BuildId)'
+
+- task: AzureFunctionAppContainer@1
+  displayName: 'Azure Function App on Container Deploy: prizegen'
+  inputs:
+    azureSubscription: 'Free Trial (7f34fecc-80ca-417b-9aae-80ddc33a2d4b)'
+    appName: prize
+    imageName: 'elsahib20/przgen:$(Build.BuildId)'
+
+- task: AzureFunctionAppContainer@1
+  displayName: 'Azure Function App on Container Deploy: theprizeapp'
+  inputs:
+    azureSubscription: 'Free Trial (7f34fecc-80ca-417b-9aae-80ddc33a2d4b)'
+    appName: theprizeapp
+    imageName: 'elsahib20/prize:$(Build.BuildId)'
