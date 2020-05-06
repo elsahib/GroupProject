@@ -4,33 +4,47 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
 trigger:
-    - przgen
-    
-    pool:
-      vmImage: 'ubuntu-latest'
-    strategy:
-      matrix:
-        Python27:
-          python.version: '2.7'
-        Python35:
-          python.version: '3.5'
-        Python36:
-          python.version: '3.6'
-        Python37:
-          python.version: '3.7'
-    
-    steps:
-    - task: UsePythonVersion@0
-      inputs:
-        versionSpec: '$(python.version)'
-      displayName: 'Use Python $(python.version)'
-    
-    - script: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-      displayName: 'Install dependencies'
-    
-    - script: |
-        pip install pytest pytest-azurepipelines
-        pytest
-      displayName: 'pytest'
+- przgen
+variables:
+  SECRET_KEY: $(SECRET_KEY)
+  DATABASE_URI: $(DATABASE_URI)
+
+pool:
+  vmImage: 'ubuntu-latest'
+strategy:
+  matrix:
+    Python37:
+      python.version: '3.7'
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.7'
+  displayName: 'Use Python 3.7'
+
+- script: |
+    python -m pip install --upgrade pip
+    pip install -r prize/requirements.txt
+  displayName: 'Install dependencies'
+
+- script: |
+    cd numgen
+    pytest --cov-report=html
+  displayName: 'testing number generator'
+
+- script: |
+    cd txtgen
+    pytest --cov-report=html
+  displayName: 'testing text generator'
+
+- script: |
+    cd przgen
+    pytest --cov-report=html
+  displayName: 'testing prize generator'
+
+- script: |
+    cd prize
+    declare $(DATABASE_URI)
+    declare $(SECRET_KEY)
+    pytest --cov-report=html
+  displayName: 'testing front end'

@@ -76,14 +76,51 @@ A regularly updated Trello board - see https://trello.com/b/EiUrPxd9/group-1-dev
 
 This was extremely useful for planning and managing our work as a geographically separated team as we were completing the project by working remotely.
 
-<img src="documentation/TrelloBoard.png" alt="Trello Board" width="90%" height="90%"/>
- 
+<img src="documentation/trello1.png" alt="Trello Board" width="90%" height="90%"/>
+
+<img src="documentation/trello2.png" alt="Trello Board" width="90%" height="90%"/>
  
 <a name="erd"></a>
 ## Entity Relationship Diagrams
 #### Initial ERD plan
  
 <img src="documentation/Grp1-proj-init-ERD.png" alt="Prize Generator ERD" width="60%" height="80%"/>
+
+<a name="testing"></a>
+## Testing
+The Testing for the application was done using pytest module. It tests the different microservices used for the application:
+- the random number generator
+- random text generator
+- prize generator
+- front-end prize generator page
+
+### Number Generator
+<img src="documentation/numgen-coverage.PNG" alt="Number Generator Coverage" width="100%" height="100%"/>
+
+### Text Generator
+<img src="documentation/txtgen-coveerage.PNG" alt="Text Generator Coverage" width="100%" height="100%"/>
+
+### Prize Generator
+<img src="documentation/przgen-coverage.PNG" alt="Prize Generator Coverage" width="100%" height="100%"/>
+
+### Front-end Prize Generator Page
+
+Coverage for this is not 100% as it does not include login protected parts of the application.
+
+<img src="documentation/prize_frontend-coverage.PNG" alt="Prize Frontend Coverage" width="100%" height="100%"/>
+
+<a name="deployment"></a>
+## Deployment
+
+To advance our skills and maximise the potential of available technologies we have deployed our application in two ways.
+
+Firstly, we have used a Kubernetes Kluster. The application deployment is automated using a webhook from github to the CI server, Azure Devops Project. Whenever a commit is made to the master branch, the CI server is notified and it will grab a copy of the changes. The will trigger Docker to build the images and they will be deployed using Kubernetes as an orchestration tool. 
+
+We have also deployed our application using Azure Functions.
+
+The diagram below displays the complexity of the CI/CD pipeline.
+
+<img src="documentation/CI_pipeline.png" alt="CI/CD Pipeline" width="100%" height="100%"/>
 
 <a name="UWI"></a>
 ## User Web Interface
