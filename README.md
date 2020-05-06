@@ -109,6 +109,15 @@ Coverage for this is not 100% as it does not include login protected parts of th
 
 <img src="documentation/prize_frontend-coverage.PNG" alt="Prize Frontend Coverage" width="100%" height="100%"/>
 
+<a name="deployment"></a>
+## Deployment
+
+Application deployment is automated using a webhook from github to the CI server, Azure Devops Project. Whenever a commit is made to the master branch, the CI server is notified and it will grab a copy of the changes. The will trigger Docker to build the images and they will be deployed using Kubernetes as an orchectration tool. 
+
+The diagram below displays the complexity of the CI/CD pipleine.
+
+<img src="documentation/CI_pipeline.png" alt="CI/CD Pipeline" width="100%" height="100%"/>
+
 <a name="UWI"></a>
 ## User Web Interface
  
