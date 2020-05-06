@@ -20,5 +20,9 @@ class TestViews(TestBase):
         self.assertEqual("code" in response.json, True)
 
     def test_chkprize(self):
-            response = self.client.get(url_for('prize'))
-            self.assertEqual("prize" in response.json, True)
+        response = self.client.get(url_for('prize'))
+        self.assertEqual("prize" in response.json, True)
+
+    def test_chkflase(self):
+        response = self.client.get(url_for('prize'))
+        self.assertEqual("blahblah" in response.json, False)
