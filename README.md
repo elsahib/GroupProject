@@ -85,6 +85,17 @@ This was extremely useful for planning and managing our work as a geographically
  
 <img src="documentation/Grp1-proj-init-ERD.png" alt="Prize Generator ERD" width="60%" height="80%"/>
 
+<a name="testing"></a>
+## Testing
+
+<img src="documentation/numgen-coverage.png" alt="Number Generator Coverage" width="60%" height="80%"/>
+
+<img src="documentation/testgen-coveerage.png" alt="Text Generator Coverage" width="60%" height="80%"/>
+
+<img src="documentation/prizegen-coverage.png" alt="Prize Generator Coverage" width="60%" height="80%"/>
+
+<img src="documentation/prize_frontend-coverage.png" alt="Prize Frontend Coverage" width="60%" height="80%"/>
+
 <a name="UWI"></a>
 ## User Web Interface
  
