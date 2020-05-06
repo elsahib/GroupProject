@@ -88,7 +88,7 @@ This was extremely useful for planning and managing our work as a geographically
 
 <a name="testing"></a>
 ## Testing
-The Testing for the application was done using pytest module. It tests the different microservices used including:
+The Testing for the application was done using pytest module. It tests the different microservices used for the application:
 - the random number generator
 - random text generator
 - prize generator
