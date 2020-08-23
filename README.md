@@ -147,8 +147,8 @@ The diagram below displays the complexity of the CI/CD pipeline.
 <a name="rel"></a>
 ## Relevant information and links
 
-* Application link IP address: http://20.185.78.213
+* Application link IP address: http://20.185.78.213 (Azure trial ended)
 
-* Azure Functions Deployment: https://theprizeapp.azurewebsites.net/
+* Azure Functions Deployment: https://theprizeapp.azurewebsites.net/ (Azure trial ended)
 
-* Trello Board Link: https://trello.com/b/EiUrPxd9/group-1-devops
+* Trello Board Link: https://trello.com/b/EiUrPxd9/group-1-devops 
